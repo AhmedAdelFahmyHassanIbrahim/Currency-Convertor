@@ -26,4 +26,20 @@ class CurrencyConverter(object):
 
         window.mainloop()
 
-        
+
+    def ConvertedAmount(self):
+        """
+        This function takes no arguments, 
+        but takes the input from the entries, 
+        and make the calculation on it
+        """
+        amount = float(self.conversionRateVar.get())
+        convertedAmountVar = float(self.amounttoConvertVar.get()) * amount
+        self.convertedAmountVar.set(format(convertedAmountVar, "10.2f"))
+
+    def delete_all(self):
+        self.amounttoConvertVar.set("")
+        self.convertedAmountVar.set("")
+        self.conversionRateVar.set("")
+
+CurrencyConverter()
